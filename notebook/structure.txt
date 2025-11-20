@@ -1,0 +1,120 @@
+## 1. Structure générale du dataset
+- Dimensions (nombre de lignes, nombre de colonnes).
+- Types des variables (numériques, catégorielles, temporelles).
+- Présence de valeurs manquantes (après nettoyage).
+- Analyse des duplications au niveau :
+  - Trip ID (unicité)
+  - Taxi ID (distribution du nombre de courses par taxi).
+
+---
+
+## 2. Analyse des variables temporelles
+### 2.1 Conversion des timestamps
+- Conversion en datetime.
+- Création de variables dérivées :
+  - Heure du jour
+  - Jour de la semaine
+  - Mois
+  - Week-end vs semaine
+
+### 2.2 Analyse descriptive
+- Répartition des courses :
+  - par heure
+  - par jour de semaine
+  - par mois
+- Recherche de patterns : pics d’activité, creux, saisonnalité.
+
+---
+
+## 3. Analyse univariée des variables numériques
+Variables : Trip Seconds, Trip Miles, Fare, Tips, Tolls, Extras, Trip Total.
+
+Pour chacune :
+- Statistiques descriptives :
+  - moyenne, médiane, min, max, écart-type
+  - distribution (histogrammes)
+- Détection d’outliers :
+  - percentiles 1%, 5%, 95%, 99%
+  - valeurs extrêmes typiques des données taxi
+- Interprétation économique :
+  - Durée typique d’une course
+  - Distance médiane
+  - Répartition des montants (Fare, Trip Total)
+
+---
+
+## 4. Analyse univariée des variables catégorielles
+Variables : Payment Type, Company, Pickup Community Area, Dropoff Community Area.
+
+### 4.1 Payment Type
+- Fréquences (carte, cash, autres).
+- Évolution dans le temps (carte vs cash).
+
+### 4.2 Company
+- Top 20 compagnies.
+- Concentration : Herfindahl, % des 5 plus grosses compagnies.
+
+### 4.3 Pickup / Dropoff Community Area
+- Zones les plus actives (top 10).
+- Zones les moins actives (bottom 10).
+- Analyse de la catégorie –1 (Unknown Area).
+
+---
+
+## 5. Analyse bivariée : Relations entre variables
+### 5.1 Distance / Durée / Prix
+- Trip Miles vs Fare (corrélation)
+- Trip Seconds vs Fare
+- Trip Miles vs Trip Seconds
+- Trip Miles + Trip Seconds vs Trip Total
+
+### 5.2 Pourboires (Tips)
+- Tips vs Fare
+- Tips vs Payment Type
+  - attendu : beaucoup moins de tips en cash
+- Distribution des tips par Company
+
+### 5.3 Péages et extras
+- Tolls vs zones d’origine/destination
+- Extras vs horaires (ex. surcharge de nuit)
+
+---
+
+## 6. Analyse spatio-temporelle
+### 6.1 Activité par zone
+- Heatmap pickup (distribution des zones)
+- Heatmap dropoff
+- Comparaison pickup vs dropoff
+
+### 6.2 Activité dans le temps
+- Courses par heure × zone
+- Courses par jour × zone
+
+### 6.3 Distance moyenne par zone
+- Distance moyenne selon Pickup Community Area
+- Identifications des zones où les trajets sont :
+  - courts mais nombreux
+  - longs mais rares
+
+---
+
+## 7. Analyse de cohérence et détection d’anomalies
+- Identifications anomalies :
+  - Trip Seconds = 0 mais distance > 0
+  - Fare = 0 mais distance > 0
+  - Tolls > 0 pour des trajets courts urbains
+- Détection des taxis ayant un comportement atypique :
+  - nombre anormalement élevé de courses
+  - distances très faibles répétées
+  - durées systématiquement élevées
+
+---
+
+## 8. Préparation à la modélisation (résumé)
+- Liste des variables pertinentes pour prédire Fare ou Trip Total.
+- Résumé des transformations finales :
+  - encodage des catégories
+  - normalisation éventuelle
+  - sélection des features
+- Résumé des insights clés de l’EDA.
+
