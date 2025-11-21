@@ -1,20 +1,16 @@
 [project]
-name = "flight-price-prediction"
+name = "predicting-airline-ticket-prices"
 version = "0.1.0"
-description = ""
-authors = [
-    {name = "jbcheze",email = "jbcheze@gmail.com"}
-]
+description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
-    "matplotlib (>=3.10.7,<4.0.0)",
-    "pandas (>=2.3.3,<3.0.0)",
-    "seaborn (>=0.13.2,<0.14.0)",
-    "scikit-learn (>=1.7.2,<2.0.0)"
+    "matplotlib>=3.10.7",
+    "nbformat>=5.10.4",
+    "pandas>=2.3.3",
+    "plotly>=6.5.0",
+    "scikit-learn<=2.2",
+    "seaborn>=0.13.2",
+    "shap>=0.49.1",
+    "xgboost>=3.1.2",
 ]
-
-
-[build-system]
-requires = ["poetry-core>=2.0.0,<3.0.0"]
-build-backend = "poetry.core.masonry.api"
