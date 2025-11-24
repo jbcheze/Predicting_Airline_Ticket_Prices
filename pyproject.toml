@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [project]
 name = "flight-price-prediction"
 version = "0.1.0"
@@ -19,3 +20,24 @@ dependencies = [
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
 build-backend = "poetry.core.masonry.api"
+=======
+[project]
+name = "predicting-airline-ticket-prices"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "fastparquet>=2024.11.0",
+    "matplotlib>=3.10.7",
+    "nbformat>=5.10.4",
+    "pandas>=2.3.3",
+    "plotly>=6.5.0",
+    "pyarrow>=22.0.0",
+    "pytorch-tabnet>=4.1.0",
+    "scikit-learn<=2.2",
+    "seaborn>=0.13.2",
+    "shap>=0.49.1",
+    "xgboost>=3.1.2",
+]
+>>>>>>> e3c7359d4fde29fadc2a65fd603055118ad3f563
