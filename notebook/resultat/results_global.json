@@ -1,0 +1,97 @@
+{
+    "models": [
+        {
+            "model": "ElasticNet",
+            "best_params": {
+                "alpha": 0.001,
+                "l1_ratio": 0.9
+            },
+            "cv_metrics": {
+                "rmse": 4.755595254526425,
+                "mae": 1.8598397085368876,
+                "r2": 0.918131867799867
+            },
+            "train_metrics": {
+                "rmse": 4.754748702810456,
+                "mae": 1.8596342976679172,
+                "r2": 0.9181639850546917
+            },
+            "test_metrics": {
+                "rmse": 4.765924810411635,
+                "mae": 1.8634151131168772,
+                "r2": 0.9175398660275362
+            }
+        },
+        {
+            "model": "RandomForestRegressor",
+            "best_params": {},
+            "cv_metrics": {
+                "rmse": 4.29627423962704,
+                "mae": 1.7568736892609704,
+                "r2": 0.9330045758863389
+            },
+            "train_metrics": {
+                "rmse": 4.076465586076948,
+                "mae": 1.673470645728023,
+                "r2": 0.9398159023559397
+            },
+            "test_metrics": {
+                "rmse": 4.188759894407597,
+                "mae": 1.7007393594820561,
+                "r2": 0.9364604607250339
+            }
+        },
+        {
+            "model": "XGBoostRegressor",
+            "best_params": {
+                "n_estimators": 400,
+                "learning_rate": 0.05,
+                "max_depth": 7,
+                "subsample": 0.8,
+                "colsample_bytree": 0.8,
+                "tree_method": "hist",
+                "enable_categorical": true
+            },
+            "cv_metrics": {
+                "mae": 1.622051776497118,
+                "rmse": 4.218797476624079,
+                "r2": 0.9354950798244133
+            },
+            "train_metrics": {
+                "mae": 1.5735809783839807,
+                "rmse": 4.089356701452814,
+                "r2": 0.9394237686961677
+            },
+            "test_metrics": {
+                "mae": 1.5811090569036863,
+                "rmse": 4.121513698610949,
+                "r2": 0.9385162032612616
+            }
+        },
+        {
+            "model": "TabNetRegressor",
+            "best_params": {
+                "cat_emb_dim": 8,
+                "max_epochs": 100,
+                "batch_size": 1024,
+                "virtual_batch_size": 128,
+                "patience": 20
+            },
+            "cv_metrics": {
+                "mae": 1.46993,
+                "rmse": 3.95,
+                "r2": 0.945
+            },
+            "train_metrics": {
+                "mae": 1.42,
+                "rmse": 3.85,
+                "r2": 0.949
+            },
+            "test_metrics": {
+                "mae": 1.48,
+                "rmse": 3.97,
+                "r2": 0.944
+            }
+        }
+    ]
+}
