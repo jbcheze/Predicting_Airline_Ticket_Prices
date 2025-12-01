@@ -2,10 +2,6 @@
     "models": [
         {
             "model": "ElasticNet",
-            "best_params": {
-                "alpha": 0.001,
-                "l1_ratio": 0.9
-            },
             "cv_metrics": {
                 "rmse": 4.755595254526425,
                 "mae": 1.8598397085368876,
@@ -24,7 +20,6 @@
         },
         {
             "model": "RandomForestRegressor",
-            "best_params": {},
             "cv_metrics": {
                 "rmse": 4.29627423962704,
                 "mae": 1.7568736892609704,
@@ -43,15 +38,6 @@
         },
         {
             "model": "XGBoostRegressor",
-            "best_params": {
-                "n_estimators": 400,
-                "learning_rate": 0.05,
-                "max_depth": 7,
-                "subsample": 0.8,
-                "colsample_bytree": 0.8,
-                "tree_method": "hist",
-                "enable_categorical": true
-            },
             "cv_metrics": {
                 "mae": 1.622051776497118,
                 "rmse": 4.218797476624079,
@@ -70,27 +56,20 @@
         },
         {
             "model": "TabNetRegressor",
-            "best_params": {
-                "cat_emb_dim": 8,
-                "max_epochs": 100,
-                "batch_size": 1024,
-                "virtual_batch_size": 128,
-                "patience": 20
-            },
             "cv_metrics": {
                 "mae": 1.46993,
-                "rmse": 3.95,
-                "r2": 0.945
+                "rmse": 5.19018,
+                "r2": "NaN"
             },
             "train_metrics": {
-                "mae": 1.42,
-                "rmse": 3.85,
-                "r2": 0.949
+                "mae": 1.46998,
+                "rmse":  5.28656,
+                "r2": "NaN"
             },
             "test_metrics": {
-                "mae": 1.48,
-                "rmse": 3.97,
-                "r2": 0.944
+                "mae": 1.4699305121979387,
+                "rmse": 5.190176190262465,
+                "r2": 0.9024984802782751
             }
         }
     ]
